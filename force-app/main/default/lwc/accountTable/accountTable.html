@@ -18,8 +18,8 @@
     </lightning-card>
 
     <!-- account detail component -->
-    <c-account-detail account-id={selectedAccount}></c-account-detail>
+    <c-account-detail account-id={selectedAccount} oneditaccount={handleAccountEdit}></c-account-detail>
 
     <!-- create account component -->
-    <c-create-account onaccountcreated={handleAccountCreated}></c-create-account>
+    <c-create-account onaccountcreated={handleAccountCreated} edited-account-object={editedAccountWrapper}></c-create-account>
 </template>

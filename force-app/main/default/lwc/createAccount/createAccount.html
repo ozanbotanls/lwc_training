@@ -1,9 +1,20 @@
 <template>
-    <lightning-card title="Create Account" icon-name="standard:record">
-       <div class="slds-m-around_medium">
-           <lightning-input label="Id" disabled value={accountId}></lightning-input>
-           <lightning-input label="Name" onchange={handleNameChange} class="slds-m-bottom_x-small"></lightning-input>
-           <lightning-button label="Create Account" variant="brand" onclick={createAccount}></lightning-button>
-       </div>
-    </lightning-card>
+    <template if:false={editedAccountObject}>
+        <lightning-card title="Create Account" icon-name="standard:record">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Id" disabled value={accountId}></lightning-input>
+            <lightning-input label="Name" onchange={handleNameChange} class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-button label="Create Account" variant="brand" onclick={createAccount}></lightning-button>
+        </div>
+        </lightning-card>
+    </template>
+
+    <template if:true={editedAccountObject}>
+        <lightning-card title="Edit Account" icon-name="standard:record">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Name" onchange={handleNameChange} value={editedAccountObject.accountName} class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-button label="Update" variant="neutral" onclick={editAccount}></lightning-button>
+        </div>
+        </lightning-card>
+    </template>
 </template> 

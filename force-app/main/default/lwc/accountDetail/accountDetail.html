@@ -4,5 +4,7 @@
     <template if:true={account.data}>
         Account Id => {accountId_ui} <br/>
         Account Name => {accountName_ui} <br/>
+
+        <lightning-button label="Edit Account" title="Edit Record" onclick={handleEditRecord} class="slds-m-left_x-small"></lightning-button>
     </template>
 </template>

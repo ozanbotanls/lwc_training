@@ -16,6 +16,13 @@ export default class AccountDetail extends LightningElement {
         return this.account.data.fields.Name.value;
     }
 
+    handleEditRecord() {
+        const event = new CustomEvent('editaccount', {
+            detail: { 'accountId': this.accountId, 'accountName': this.account.data.fields.Name.value }
+        });
+        this.dispatchEvent(event);
+    }
+
     // @track accountId_ui;
     // @track accountName_ui;
     // @wire(getRecord, { recordId: '$accountId', fields: [ ACCOUNT_ID, ACCOUNT_NAME ] } )
