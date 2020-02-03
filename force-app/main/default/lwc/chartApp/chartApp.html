@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Chart App" icon-name="standard:product_consumed">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Percentage" type="number" min="0" max="100" value={percentage} onchange={handlePercentageChange}></lightning-input>
+            <c-bar-component percentage={percentage}></c-bar-component>
+        </div>
+    </lightning-card>
+</template>

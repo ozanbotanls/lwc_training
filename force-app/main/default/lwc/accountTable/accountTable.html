@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Account Table" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-input type="search" value={searchText} onchange={grabTextChange} label="Search by text" class="slds-m-bottom_small"></lightning-input>
+            <template if:true={accountList.data}>
+                <template for:each={accountList.data} for:item="account">
+                    <p key={account.Id} data-id={account.Id} onclick={handleSelected}>
+                        <lightning-button-icon key={account.Id} data-id={account.Id} onclick={handleDeleteRecord} 
+                            icon-name="utility:delete" variant="bare" alternative-text="Delete" class="slds-m-left_xx-small"></lightning-button-icon>
+                        {account.Name}
+                    </p>
+                </template>
+            </template>
+            <template if:true={accountList.error}>
+                Error occurred during account fetch.
+            </template>
+        </div>
+    </lightning-card>
+
+    <!-- account detail component -->
+    <c-account-detail account-id={selectedAccount}></c-account-detail>
+
+    <!-- create account component -->
+    <c-create-account onaccountcreated={handleAccountCreated}></c-create-account>
+</template>
