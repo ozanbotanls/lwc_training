@@ -1,7 +1,7 @@
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 const showSuccessMessage = (title, message) => {
-    this.dispatchEvent(new ShowToastEvent({
+    dispatchEvent(new ShowToastEvent({
         title: title,
         message: message,
         variant: 'success'
@@ -9,7 +9,7 @@ const showSuccessMessage = (title, message) => {
 }
 
 const showErrorMessage = (title, message) => {
-    this.dispatchEvent(new ShowToastEvent({
+    dispatchEvent(new ShowToastEvent({
         title: title,
         message: message,
         variant: 'error'
@@ -17,7 +17,7 @@ const showErrorMessage = (title, message) => {
 }
 
 const showMessage = (type = 'success', title, message) => {
-    this.dispatchEvent(new ShowToastEvent({
+    dispatchEvent(new ShowToastEvent({
         title: title,
         message: message,
         variant: type

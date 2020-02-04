@@ -1,10 +1,14 @@
 <template>
-    <hr>
-    this component holds an account detail based on account id <br>
-    <template if:true={account.data}>
-        Account Id => {accountId_ui} <br/>
-        Account Name => {accountName_ui} <br/>
-
-        <lightning-button label="Edit Account" title="Edit Record" onclick={handleEditRecord} class="slds-m-left_x-small"></lightning-button>
-    </template>
+    <lightning-card title="Account Detail" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <p>This component shows the custom developed detail page of a selected account</p>
+            <template if:true={account.data}>
+                <p>Account Id => {accountId_ui} </p>
+                <p>Account Name => {accountName_ui}</p>
+                <div>
+                    <lightning-button label="Edit Account" title="Edit Record" onclick={handleEditRecord} class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
 </template>

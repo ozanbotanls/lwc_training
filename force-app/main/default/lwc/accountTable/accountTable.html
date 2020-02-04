@@ -18,8 +18,12 @@
     </lightning-card>
 
     <!-- account detail component -->
-    <c-account-detail account-id={selectedAccount} oneditaccount={handleAccountEdit}></c-account-detail>
+    <div class="childCmpDiv">
+        <c-account-detail account-id={selectedAccount} oneditaccount={handleAccountEdit}></c-account-detail>
+    </div>
 
     <!-- create account component -->
-    <c-create-account onaccountcreated={handleAccountCreated} edited-account-object={editedAccountWrapper}></c-create-account>
+    <div class="childCmpDiv">
+        <c-create-account onaccountcreated={handleAccountCreated} edited-account-object={editedAccountWrapper}></c-create-account>
+    </div>
 </template>
