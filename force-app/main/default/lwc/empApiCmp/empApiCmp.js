@@ -15,8 +15,10 @@ export default class EmpApiCmp extends LightningElement {
 
     handleSubscribe() {
         // Callback invoked whenever a new event message is received
-        const messageCallback = function(response) {
+        const messageCallback = (response) => {
             showSuccessMessage('New message received', response.data.payload.Message__c);
+            let target = this.template.querySelector('[data-id="_jsReceivedMessage"]');
+            target.innerHTML += '<p>' + response.data.payload.Message__c + '</p>';
         };
 
         // Invoke subscribe method of empApi. Pass reference to messageCallback
