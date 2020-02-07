@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="percentage" type="Integer" default="10" />
+    <lightning:card title="This is Aura Cmp" iconName="custom:custom25">
+        <div class="slds-m-around_medium">
+            <lightning:input label="Percentage" type="number" min="0" max="100" value="{!v.percentage}"></lightning:input>
+            <p> under here is the LWC </p>
+            <c:barComponent percentage="{!v.percentage}" />
+        </div>
+    </lightning:card>
+</aura:component>
