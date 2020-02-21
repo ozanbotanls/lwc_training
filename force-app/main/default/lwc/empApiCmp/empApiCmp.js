@@ -20,7 +20,7 @@ export default class EmpApiCmp extends LightningElement {
             const body = response.data.payload && response.data.payload.Message__c || response.data.sobject.Name + ' created!!';
             showSuccessMessage('New message received', body);
             let target = this.template.querySelector('[data-id="_jsReceivedMessage"]');
-            target.innerHTML += '<p>' + body + '</p>';
+            target.innerHTML += '<li>' + body + '</li>';
         };
 
         // Invoke subscribe method of empApi. Pass reference to messageCallback
